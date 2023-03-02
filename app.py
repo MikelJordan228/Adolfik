@@ -7,7 +7,7 @@ from random import choice
 
 from config import Config
 import os
-import git
+
 
 from fask_db_class import FlaskDataBase
 
@@ -26,7 +26,7 @@ menu = [{'name': 'Главная', 'url': '/'}, {'name': 'Помощь', 'url': 
 @app.route('/update_server', methods=['POST'])
 def webhook():
     if request.method == 'POST':
-        repo = git.Repo('/home/Michael12211/flaskCUB')
+        repo = git.Repo('/home/vanashavuh/flaskCUB')
         origin = repo.remotes.origin
         origin.pull()
         return 'Updated PythonAnywhere successfully', 200
